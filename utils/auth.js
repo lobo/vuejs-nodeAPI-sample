@@ -10,7 +10,7 @@ var router = new Router({
 });
 
 export function login() {
-  window.location.href = `https://dlobo-real.auth0.com/authorize?scope=full_access&audience={YOUR-API-IDENTIFIER}&response_type=id_token%20token&client_id=H6NkKecij3SNMnF0PqrHBhZBK1X8BUNU&redirect_uri=http://localhost:8080/callback&nonce=`;
+  window.location.href = `https://dlobo-real.auth0.com/authorize?scope=full_access&audience=https://startupbattle.com&response_type=id_token%20token&client_id=H6NkKecij3SNMnF0PqrHBhZBK1X8BUNU&redirect_uri=http://localhost:8080/callback&nonce=mrwolf`;
 }
 
 export function logout() {
