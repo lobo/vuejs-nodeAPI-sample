@@ -60,7 +60,7 @@ export default {
   // Whatever is defined in this method is applied just after a component is mounted
   // on the browser screen.
 
-  // So we tell Vuejs to load the data from the API just after the publicBattles 
+  // So we tell Vuejs to load the data from the API just after the publicBattles
   // component gets rendered.
   mounted() {
     this.getPublicStartupBattles();
