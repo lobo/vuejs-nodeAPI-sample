@@ -1,15 +1,22 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Hello from '@/components/Hello';
+import PrivateBattles from '@/components/privateBattles';
+import PublicBattles from '@/components/publicBattles';
 
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello,
+      name: 'PublicBattles',
+      component: PublicBattles,
+    },
+    {
+      path: '/private-battles',
+      name: 'PrivateBattles',
+      component: PrivateBattles,
     },
   ],
 });
