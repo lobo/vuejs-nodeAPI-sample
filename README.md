@@ -49,3 +49,36 @@ backend and displays it in the frontend.
 ### Testing
 
 No testing for the time being.
+
+### To run the Node API
+
+The following will run in `localhost:3333`
+```
+cd ./server
+node server.js
+```
+
+### Authentication explained
+
+The logic is saved in the `utils/auth.js` file.
+
+1. A hosted version of Auth0 Lock is used in the `login` method.
+Credentials are passed onto that method.
+
+2. The URL calls Auth0's `authorize` endpoint. Hence, the client app is validated 
+and authorized to perform validation. More information about what to pass there 
+[can be found here](https://auth0.com/docs/api-auth/tutorials/implicit-grant#1-get-the-user-s-authorization).
+
+3. The token expiration is checked in the `getTokenExpirationDate` and `isTokenExpired` methods. 
+The `isLoggedIn` method returns true or false based on the presence and validity of a user `id_token`. 
+For more information on `id_token`, [please check here](https://auth0.com/docs/tokens/id-token).
+
+4. The component `callback.vue` will be activated when the `localhost:8080/callback` route is called and it
+ will process the redirect from Auth0 and ensure that the right data back after a successful authentication 
+ was received. The component will store the `access_token` and `id_token`.
+
+5. Once a user is authenticated, Auth0 will redirect back to the application and call the `/callback` route. 
+Auth0 will also append the `id_token` as well as the `access_token` to this request, and the `callback.vue` 
+component will make sure to properly process and store those tokens in localStorage. 
+If all is well, meaning the `id_token` and `access_token` are received, and verified the nonce, 
+the user will be redirected back to the `/` page and will be in a logged in state.
