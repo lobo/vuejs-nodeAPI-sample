@@ -41,6 +41,11 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
  node_modules/ - All the packages required for the react app resides here
 ```
 
+### Fetching API data
+
+Inside the `utils` directory, there's a `battles-api.js` which fetches the data from the node 
+backend and displays it in the frontend.
+
 ### Testing
 
 No testing for the time being.
