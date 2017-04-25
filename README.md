@@ -65,9 +65,10 @@ The logic is saved in the `utils/auth.js` file.
 1. A hosted version of Auth0 Lock is used in the `login` method.
 Credentials are passed onto that method.
 
-2. The URL calls Auth0's `authorize` endpoint. Hence, the client app is validated 
-and authorized to perform validation. More information about what to pass there 
-[can be found here](https://auth0.com/docs/api-auth/tutorials/implicit-grant#1-get-the-user-s-authorization).
+2. The auth0 package calls the Auth0's `authorize` endpoint. With all the details we passed
+ to the method, our client app will be validated and authorized to perform authentication. 
+ You can learn more about the specific values that can be passed to the authorize method
+  [here](https://auth0.com/docs/libraries/auth0js/v8#login).
 
 3. The token expiration is checked in the `getTokenExpirationDate` and `isTokenExpired` methods. 
 The `isLoggedIn` method returns true or false based on the presence and validity of a user `id_token`. 
