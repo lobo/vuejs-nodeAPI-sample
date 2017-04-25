@@ -19,7 +19,7 @@ const authCheck = jwt({
         jwksUri: "https://dlobo-real/.well-known/jwks.json"
     }),
     // This is the identifier we set when we created the API
-    audience: '{YOUR-API-AUDIENCE-ATTRIBUTE}',
+    audience: 'https://startupbattle.com',
     issuer: "https://dlobo-real.auth0.com/",
     algorithms: ['RS256']
 });
